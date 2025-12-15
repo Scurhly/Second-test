@@ -1,29 +1,23 @@
-
- import express from "express";
-import fetch from "node-fetch";
-import dotenv from "dotenv";
-import FormData from "form-data";
-
-dotenv.config();
+const express = require("express");
+const fetch = require("node-fetch");
+require("dotenv").config();
 
 const app = express();
 app.use(express.json());
 
-const UNIVERSE_ID = 9353795104;
-const ROBLOX_API_KEY = "XZnaTgt1tUanbRbrOzBcH+C5vmcliIeqOiWN3HxVqD3RmRwyZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXRwWkNJNkluTnBaeTB5TURJeExUQTNMVEV6VkRFNE9qVXhPalE1V2lJc0luUjVjQ0k2SWtwWFZDSjkuZXlKaGRXUWlPaUpTYjJKc2IzaEpiblJsY201aGJDSXNJbWx6Y3lJNklrTnNiM1ZrUVhWMGFHVnVkR2xqWVhScGIyNVRaWEoyYVdObElpd2lZbUZ6WlVGd2FVdGxlU0k2SWxoYWJtRlVaM1F4ZEZWaGJtSlNZbkpQZWtKalNDdEROWFp0WTJ4cFNXVnhUMmxYVGpOSWVGWnhSRE5TYlZKM2VTSXNJbTkzYm1WeVNXUWlPaUkyTlRJNE9URTFOVFVpTENKbGVIQWlPakUzTmpVMk9URXdNVEVzSW1saGRDSTZNVGMyTlRZNE56UXhNU3dpYm1KbUlqb3hOelkxTmpnM05ERXhmUS5UWFJvY25jb3RkX2ZodzhnWThpWWgyUWRxMll4NDNiQ1BBNGpGR2VvUkhSVmxRWG92VV9BOUlfbEpmSm4wNVFPUTlFRWFwOU43WWdQREgyVFgwcVk5cDV0SUsyRXNlTmdsd2lRb3kzQkUyYldoTTd1RE9qVWFoWmxQeDRUSEFTR0lnNEFKdUNjeS1CVUM3V0FKVVUta3pLVmFfbHMzd0Y3Y3ZaNFFuYnA3Z2F5eXZZcGdHWmRTRnliTjQxbmlOM2ZMX0tTSDNwYkgzMlNTZXIyMDQwbDFiMjdYVG5uTGZJd3NxVERkTXZWaWctR0F1MXU1OFFsNHJLenNkSWg0OXNKajBiSVgwRG5pelp1QlZzakV6TzFzOTloS3VreDJlTkh6RndMeEtjMllXbE1YbDRNVWtNMHVoVlpxaE52RDdYRVlmZ1djM2R2WW1QcTYzNnM4THJwWmc=";
-
-/* ------------------ Health check ------------------ */
 app.get("/", (req, res) => {
   res.send("Backend is running");
 });
 
-/* ------------------ Test endpoint ------------------ */
 app.post("/test", (req, res) => {
-  console.log("Incoming body:", req.body);
+  console.log(req.body);
   res.json({ ok: true });
 });
 
-/* ------------------ Create Dev Product ------------------ */
+app.listen(3000, () => {
+  console.log("Server running on http://second-test-production.up.railway.app");
+});
+
 app.post("/create-product", async (req, res) => {
   try {
     const { amount } = req.body;
@@ -75,4 +69,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
 

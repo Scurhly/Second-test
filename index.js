@@ -34,7 +34,7 @@ app.post("/create-product", async (req, res) => {
     form.append("isRegionalPricingEnabled", "true");
 
     const response = await fetch(
-      `https://apis.roblox.com/developer-products/v2/universes/${UNIVERSE_ID}/developer-products`,
+      `https://apis.roblox.com/developer-products/v2/universes/${9353795104}/developer-products`,
       {
         method: "POST",
         headers: {
@@ -69,5 +69,6 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
 
 

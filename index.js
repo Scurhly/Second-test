@@ -27,11 +27,11 @@ app.post("/create-product", async (req, res) => {
 
  
   const PRODUCT_MAP = {
-    1: 111111,
-    5: 222222,
-    10: 333333,
-    50: 444444,
-    100: 555555
+    1: 3480326033,
+    5: 3480326507,
+    10: 3480326513,
+    50: 3480326517,
+    100: 3480327484
   };
 
   const productId = PRODUCT_MAP[amount];
@@ -41,3 +41,4 @@ app.post("/create-product", async (req, res) => {
 
   res.json({ productId });
 });
+
